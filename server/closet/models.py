@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 #from django.db.models import F, Sum, Count, Case, When
-# 임시
+
 
 # 옷장
 class Closet(models.Model):
