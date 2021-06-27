@@ -1,0 +1,31 @@
+<nav class="navBar">
+    <div class="logo"><a style="color: #000; text-decoration: none;"href="C:\Users\Administrator\Desktop\어플\static\logo.png">PROJECT</a></div>
+    <div class="navTab"></div>
+
+    <div class="mobile-navList">
+        <a href="{% url 'main:index' %}" class="navList-itm">홈</a>
+        <a href="{% url 'calender/index' %}" class="navList-itm">예약</a>
+        <a href="{% url 'board:post_list' %}" class="navList-itm">게시판</a>
+        <a href="{% url 'main:notice' %}" class="navList-itm">소식</a>
+        {% if user.username %}
+            <a href="{% url 'account:profile' user.username %}" class="navList-itm">{{user.realname}}님 </a>
+            <a href="{% url 'account:logout' %}" class="navList-itm">로그아웃</a>
+        {% else %}
+            <a href="{% url 'account:login' %}" class="navList-itm">로그인</a>
+        {% endif %}
+    </div>
+
+    <div class="navList">
+        <a href="{% url 'main:index' %}" class="navList-itm">홈</a>
+        <a href="{% url 'main:calendar' %}" class="navList-itm">예약</a>
+        <a href="{% url 'board:post_list' %}" class="navList-itm">게시판</a>
+        <a href="{% url 'main:notice' %}" class="navList-itm">소식</a>
+        {% if user.username %}
+            <a href="{% url 'account:profile' user.username %}" class="navList-itm">{{user.realname}}님 </a>
+            <a href="{% url 'account:logout' %}" class="navList-itm">로그아웃</a>
+        {% else %}
+            <a href="{% url 'account:login' %}" class="navList-itm">로그인</a>
+        {% endif %}
+        
+    </div>
+</nav>

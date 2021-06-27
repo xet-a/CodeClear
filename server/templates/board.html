@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="board_list">
+
+        <li class="board-itm">
+            <a href="">
+                <div class="itm_img"></div>
+                <div class="itm_info">
+                    <h1 class="itm_info-title">TITLE</h1>
+                    <p class="itm_info-text">
+                        LULULALA
+                    </p>
+                </div>
+            </a>
+        </li>
+
+        <li class="board-itm">
+            <a href="">
+                <div class="itm_img"></div>
+                <div class="itm_info">
+                    <h1 class="itm_info-title">TITLE</h1>
+                    <p class="itm_info-text">
+                        LULULALA
+                    </p>
+                </div>
+            </a>
+        </li>
+
+        <li class="board-itm">
+            <a href="">
+                <div class="itm_img"></div>
+                <div class="itm_info">
+                    <h1 class="itm_info-title">TITLE</h1>
+                    <p class="itm_info-text">
+                        LULULALA
+                    </p>
+                </div>
+            </a>
+        </li>
+
+        <li class="board-itm">
+            <a href="">
+                <div class="itm_img"></div>
+                <div class="itm_info">
+                    <h1 class="itm_info-title">TITLE</h1>
+                    <p class="itm_info-text">
+                        LULULALA
+                    </p>
+                </div>
+            </a>
+        </li>
+
+        <li class="board-itm">
+            <a href="">
+                <div class="itm_img"></div>
+                <div class="itm_info">
+                    <h1 class="itm_info-title">TITLE</h1>
+                    <p class="itm_info-text">
+                        LULULALA
+                    </p>
+                </div>
+            </a>
+        </li>
+
+        <li class="board-itm">
+            <a href="">
+                <div class="itm_img"></div>
+                <div class="itm_info">
+                    <h1 class="itm_info-title">TITLE</h1>
+                    <p class="itm_info-text">
+                        LULULALA
+                    </p>
+                </div>
+            </a>
+        </li>
+
+        <li class="board-itm">
+            <a href="">
+                <div class="itm_img"></div>
+                <div class="itm_info">
+                    <h1 class="itm_info-title">TITLE</h1>
+                    <p class="itm_info-text">
+                        LULULALA
+                    </p>
+                </div>
+            </a>
+        </li>
+
+        <li class="board-itm">
+            <a href="">
+                <div class="itm_img"></div>
+                <div class="itm_info">
+                    <h1 class="itm_info-title">TITLE</h1>
+                    <p class="itm_info-text">
+                        LULULALA
+                    </p>
+                </div>
+            </a>
+        </li>
+
+        <li class="board-itm">
+            <a href="">
+                <div class="itm_img"></div>
+                <div class="itm_info">
+                    <h1 class="itm_info-title">TITLE</h1>
+                    <p class="itm_info-text">
+                        LULULALA
+                    </p>
+                </div>
+            </a>
+        </li>
+
+        <li class="board-itm">
+            <a href="">
+                <div class="itm_img"></div>
+                <div class="itm_info">
+                    <h1 class="itm_info-title">TITLE</h1>
+                    <p class="itm_info-text">
+                        LULULALA
+                    </p>
+                </div>
+            </a>
+        </li>
+
+        <li class="board-itm">
+            <a href="">
+                <div class="itm_img"></div>
+                <div class="itm_info">
+                    <h1 class="itm_info-title">TITLE</h1>
+                    <p class="itm_info-text">
+                        LULULALA
+                    </p>
+                </div>
+            </a>
+        </li>
+
+        <li class="board-itm">
+            <a href="">
+                <div class="itm_img"></div>
+                <div class="itm_info">
+                    <h1 class="itm_info-title">TITLE</h1>
+                    <p class="itm_info-text">
+                        LULULALA
+                    </p>
+                </div>
+            </a>
+        </li>
+
+        <li class="board-itm">
+            <a href="">
+                <div class="itm_img"></div>
+                <div class="itm_info">
+                    <h1 class="itm_info-title">TITLE</h1>
+                    <p class="itm_info-text">
+                        LULULALA
+                    </p>
+                </div>
+            </a>
+        </li>
+
+    </ul>
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        body, ul, li, h1, a, p, hr{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+            border: none;
+        }
+
+        .board_list{
+            margin: auto;
+            width: 70%;
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+
+        .board-itm{
+            width: 30%;
+            /* padding-bottom: 30%; */
+            background-color: rgb(255, 255, 255);
+            box-shadow: 2px 2px 10px rgb(58, 58, 58, 30%);
+            border: 1px solid #fff;
+            margin-top: 3%;
+            display: flex;
+            flex-flow: column;
+        }
+
+        .itm_img{
+            background-image: url("{% static 'img/none.jpg' %}");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            filter: grayscale(100%);
+            width: 100%;
+            padding-bottom: 100%;
+
+        }
+
+        .itm_info{
+            padding: 5%;
+            color: #000;
+        }
+    </style>
+
+</body>
+</html>
