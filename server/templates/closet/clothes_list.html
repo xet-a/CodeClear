@@ -1,0 +1,15 @@
+{% if clothes_list %}
+    <ul>
+    {% for clothes in clothes_list %}
+        <li><a href="/shop/{{ clothes.id }}/">{{ clothes.clothes_name}}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>옷이 없습니다.</p>
+{% endif %}
+
+
+<tr class="thead-dark">
+    <th>총 개수</th>
+</tr>
+
