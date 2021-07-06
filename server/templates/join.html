@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>join</title>
+    <link rel="stylesheet" href="static/css/join.css">
+</head>
+
+
+<body>
+    
+    <div>
+        <h1>회원가입</h1>
+    </div>
+    <div >
+    
+        
+        <p>
+            <label for="uid"> 아이디 </label><br>
+            <input class="input1" placeholder="아이디" type="text" name="uid" >
+        </p>
+
+        <p>
+            <label for="email"> 이메일 </label><br>
+            <input class="input1" placeholder="이메일을 입력해주세요."type="text" name="email" >
+        </p>
+
+        <p>
+            <label for="password"> 비밀번호 </label><br>
+            <input class="input1" placeholder="비밀번호(대,소문자 포함 8~16글자)"type="password" name="password" >
+        </p>
+
+        <p>
+            <label for="password"> 비밀번호 확인 </label><br>
+            <input class="input1" placeholder="비밀번호를 한번 더 입력해 주세요."type="password"  name="password" >
+        </p>
+
+        <p>
+            <label for="nickname"> 닉네임(별명) </label><br>
+            <input class="input1" placeholder="닉네임(별명)"type="text"  name="nickname" >
+        </p>
+
+        <p>
+            <label for="username"> 이름 </label><br>
+            <input class="input1" placeholder="이름을 입력해 주세요."type="text"  name="username" >
+        </p>
+
+        <p>
+            <label for="phone"> 연락처 </label><br>
+            <input class="input1" placeholder="전화번호를 입력해 주세요."type="text"  name="phone" >
+            <input class="input1" placeholder="인증번호를 입력해 주세요."type="text"  name="phone" >
+        </p>
+
+        <p>
+            <label for="birthday"> 생년월일 </label><br>
+            <input class="input1" placeholder="ex)101010" type="text"  name="birthday" >
+        </p>
+        </div>
+        <div >
+        <p>
+            <label for="sex"> 성별 </label><br>
+            <input  type="radio"  name="sex" value="m" >
+			<label for="gerderM"> 남성 </label>
+			<input  type="radio"  name="sex" value="f" >
+			<label for="gerderF"> 여성 </label>
+        </p>
+
+        <p> 
+            <label for="term"> 약관동의 </label><br>
+            <input type="checkbox" name="term" value="">
+            <label for="term1"> 모든약관에 동의합니다. </label><br>	 
+            <input type="checkbox"  name="term"value="">
+            <label for="term2"> 개인정보 취급방침에 동의합니다. </label><br>	 
+            <input type="checkbox"  name="term" value="">
+            <label for="term3"> 푸시알림수신에 동의합니다. </label><br>
+        </p>
+        </div>
+    </div>
+
+    <div>
+            <button class="button1" type="submit">회원가입</button>
+    </div>
+    
+</body>
+
+</html>
