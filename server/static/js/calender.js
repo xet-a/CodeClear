@@ -38,18 +38,25 @@ const renderCalender = () => {
         const condition = i >= firstDateIndex && i < lastDateIndex + 1 ?
             'this' :
             'other';
-        dates[i] = `<div class="date"><span class=${condition}>${date}</span></div>`;
+        dates[i] = `
+            <div class="date ${condition}">
+                <div class="date-itm">
+                    ${date}
+                </div>
+                
+            </div>
+        `;
     });
 
     document.querySelector('.dates').innerHTML = dates.join('');
 
     const today = new Date();
     if (viewMonth === today.getMonth() && viewYear === today.getFullYear()) {
-        for (let date of document.querySelectorAll('.this')) {
-            if (+date.innerText === today.getDate()) {
-                date.parentElement.classList.add('today');
-                // date.classList.add('today');
+        for (let date of document.querySelectorAll('.date-itm')) {
+            if (+date.innerText === today.getDate() && !date.parentNode.classList.contains('other')) {
+                date.parentNode.classList.add('today');
                 break;
+
             }
         }
     }

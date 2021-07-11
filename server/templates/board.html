@@ -1,221 +1,535 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="static/board/css">
 </head>
+
 <body>
-    <ul class="board_list">
+    <div class="container">
 
-        <li class="board-itm">
-            <a href="">
-                <div class="itm_img"></div>
-                <div class="itm_info">
-                    <h1 class="itm_info-title">TITLE</h1>
-                    <p class="itm_info-text">
-                        LULULALA
-                    </p>
+        <div class="header">
+
+            <nav class="navBar">
+                <div class="navBar__menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="50" viewBox="0 0 26 12"><g fill="none" fill-rule="evenodd"><g><g><path d="M0 0H26V12H0z" transform="translate(-16 -38) translate(16 38)"></path><path fill="#363636" fill-rule="nonzero"d="M1.723 10.953V7.672L1.552 3.29l2.932 7.663h1.238l2.94-7.67-.172 4.389v3.281h1.723V1H7.978L5.113 8.629 2.243 1H0v9.953h1.723zm13.63.137c.616 0 1.17-.122 1.665-.366.495-.244.89-.587 1.186-1.029l-.895-.854c-.479.615-1.099.923-1.86.923-.542 0-.992-.178-1.35-.534-.358-.355-.562-.838-.612-1.449h4.833v-.67c0-1.175-.274-2.085-.823-2.727-.55-.643-1.328-.964-2.335-.964-.633 0-1.208.162-1.723.485-.515.324-.914.776-1.2 1.357-.284.581-.427 1.24-.427 1.98v.204c0 1.103.327 1.986.981 2.65.654.662 1.508.994 2.56.994zm1.327-4.526h-3.165c.077-.57.256-1.014.536-1.333.28-.319.649-.478 1.104-.478.46 0 .82.142 1.08.427.26.285.408.705.445 1.261v.123zm4.566 4.39V5.688c.328-.606.827-.909 1.497-.909.46 0 .792.113.995.339.203.225.304.573.304 1.042v4.792h1.661V6.065c-.027-1.763-.811-2.645-2.351-2.645-.89 0-1.607.33-2.154.991l-.048-.854h-1.565v7.396h1.661z"transform="translate(-16 -38) translate(16 38)"></path></g></g></g></svg>
+                    <svg style="margin-left: -5px;" xmlns="http://www.w3.org/2000/svg" width="16" height="50" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><g><g><g><path d="M0 0H16V16H0z" transform="translate(-63 -36) translate(16 20) translate(47 16)"></path><path stroke="#363636" d="M4 6L8 11 12 6" transform="translate(-63 -36) translate(16 20) translate(47 16)"></path></g></g></g></g></svg>
                 </div>
-            </a>
-        </li>
 
-        <li class="board-itm">
-            <a href="">
-                <div class="itm_img"></div>
-                <div class="itm_info">
-                    <h1 class="itm_info-title">TITLE</h1>
-                    <p class="itm_info-text">
-                        LULULALA
-                    </p>
+                <h1 class="navBar__title">디지털 옷장</h1>
+
+                <div class="navBar__liked">
+                    <svg width="24px" height="50" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="000-Icon/24/icn_heart_box_24" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g><rect id="area" x="0" y="0" width="24" height="24"></rect><path d="M22,7.85391109 L21.9974907,7.99993156 L22,8 L22,14 C22,15.6511092 21.1839939,16.9469056 19.6128422,17.8048713 L19.3939193,17.919145 L12.3939193,20.919145 C12.1501469,21.0236189 11.8748567,21.0269756 11.6286093,20.9284767 L9.96788699,20.2580757 L8.48887348,19.6480923 L7.49857323,19.2301015 L6.894909,18.9701896 L5.82299886,18.4952202 L5.35463388,18.2800994 L4.5527864,17.8944272 C2.9673704,17.1017192 2.08266841,15.8467306 2.00551661,14.2329671 L2,14 L2,8 L2.003,7.99931627 L2,7.85391109 C2,3.28247494 7.43610714,1.51828492 11.6999141,4.4882301 L11.90204,4.6332421 L11.998,4.706 L12.1278891,4.60892563 C16.4159498,1.45768528 22,3.24252918 22,7.85391109 Z M3.99973957,11.5524575 L4,14 C4,14.9405071 4.44145893,15.6026955 5.4472136,16.1055728 L5.79374951,16.2753984 L6.39243684,16.556667 L7.33766065,16.9810688 L8.15657977,17.3362809 L9.06958918,17.7230264 L10.7998807,18.4374212 L11,18.5183163 L11,14.7563163 L10.8790576,14.7218762 C7.79014609,13.8148625 5.48582248,12.7704899 3.99973957,11.5524575 Z M20.001506,11.5508024 C18.8887296,12.4631977 17.3171842,13.278027 15.3017815,14.0106733 L14.8631212,14.1664166 L14.1591085,14.4020575 C13.8390486,14.5054897 13.5094469,14.6072049 13.1703507,14.7072518 L13,14.7553163 L13,18.4823163 L18.5527864,16.1055728 C19.4956814,15.6341253 19.9426134,15.0226583 19.9947967,14.1731126 L20,14 L20.001506,11.5508024 Z M13.0321752,6.43657395 L12.8587711,6.58320139 L11.9906341,7.36156909 L11.3221819,6.7453141 C8.12267978,3.79565038 4,4.88157995 4,7.85391109 C4,9.22339229 5.49147791,10.5873031 8.5840357,11.8274166 L8.89863247,11.9510109 L9.49986759,12.1741779 C9.7750105,12.2727103 10.0607377,12.3703565 10.3571076,12.4670536 L10.8096517,12.6113793 L11.518496,12.8250952 L12,12.962 L12.4837152,12.8244503 L13.1931265,12.6105097 C17.5617947,11.2479422 19.7644851,9.68798228 19.9820813,8.11353606 L19.9958751,7.97855231 L20,7.85391109 C20,5.00144359 16.1668986,3.86613225 13.0321752,6.43657395 Z" id="Shape" fill="#363636"></path></g></g></svg>
                 </div>
-            </a>
-        </li>
+            </nav>
 
-        <li class="board-itm">
-            <a href="">
-                <div class="itm_img"></div>
-                <div class="itm_info">
-                    <h1 class="itm_info-title">TITLE</h1>
-                    <p class="itm_info-text">
-                        LULULALA
-                    </p>
+            
+
+            <div class="category__wrapper">
+                <ul class="category__list">
+                    
+                    <li class="category list--itm">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><g><g><g><path d="M0 0H24V24H0z" transform="translate(-19 -255) translate(0 239) translate(19 16)"></path><path fill="#5D5D5D" d="M12 1c.88 0 1.697.628 2.516 1.917l.144.234.217.377.272.515.273.564.11.24.22.501.222.534.112.279.224.581.227.613.23.646.231.677.235.71.358 1.126.15.486H20c.552 0 1 .448 1 1v4c0 .552-.448 1-1 1v4c0 .552-.448 1-1 1H5c-.552 0-1-.448-1-1v-4c-.552 0-1-.448-1-1v-4c0-.552.448-1 1-1h2.259l.27-.87.238-.742.235-.71.232-.677.115-.327.228-.63.225-.597.224-.565.222-.534.11-.255.22-.486.273-.564.272-.515.217-.377C10.207 1.704 11.068 1 12 1zm6 16h-5v2h-2v-2H6v3h12v-3zm1-4H5v2h14v-2zM12 3c-.1 0-.227.087-.378.26l-.077.093-.128.173-.067.1-.141.224-.074.124-.153.275-.161.309-.169.341-.176.375-.182.408-.188.44-.195.473-.2.506-.205.538-.21.57-.322.913-.22.649-.224.68-.176.549h7.291l-.178-.557-.229-.696-.225-.663-.33-.933-.215-.58-.312-.807-.2-.495-.29-.68-.186-.41-.09-.191-.174-.358-.167-.323-.158-.288-.15-.253-.142-.217c-.199-.29-.369-.467-.503-.526l-.056-.019L12 3z" transform="translate(-19 -255) translate(0 239) translate(19 16)"></path></g></g></g></g></svg>
+                        <div>전체</div>
+                    </li>
+                    
+                    <li class="category list--itm">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><g><g><g><path d="M0 0H24V24H0z" transform="translate(-19 -255) translate(0 239) translate(19 16)"></path><path fill="#5D5D5D" d="M12 1c.88 0 1.697.628 2.516 1.917l.144.234.217.377.272.515.273.564.11.24.22.501.222.534.112.279.224.581.227.613.23.646.231.677.235.71.358 1.126.15.486H20c.552 0 1 .448 1 1v4c0 .552-.448 1-1 1v4c0 .552-.448 1-1 1H5c-.552 0-1-.448-1-1v-4c-.552 0-1-.448-1-1v-4c0-.552.448-1 1-1h2.259l.27-.87.238-.742.235-.71.232-.677.115-.327.228-.63.225-.597.224-.565.222-.534.11-.255.22-.486.273-.564.272-.515.217-.377C10.207 1.704 11.068 1 12 1zm6 16h-5v2h-2v-2H6v3h12v-3zm1-4H5v2h14v-2zM12 3c-.1 0-.227.087-.378.26l-.077.093-.128.173-.067.1-.141.224-.074.124-.153.275-.161.309-.169.341-.176.375-.182.408-.188.44-.195.473-.2.506-.205.538-.21.57-.322.913-.22.649-.224.68-.176.549h7.291l-.178-.557-.229-.696-.225-.663-.33-.933-.215-.58-.312-.807-.2-.495-.29-.68-.186-.41-.09-.191-.174-.358-.167-.323-.158-.288-.15-.253-.142-.217c-.199-.29-.369-.467-.503-.526l-.056-.019L12 3z" transform="translate(-19 -255) translate(0 239) translate(19 16)"></path></g></g></g></g></svg>
+                        <div>아우터</div>
+                    </li>
+                    
+                    <li class="category list--itm">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><g><g><g><path d="M0 0H24V24H0z" transform="translate(-19 -255) translate(0 239) translate(19 16)"></path><path fill="#5D5D5D" d="M12 1c.88 0 1.697.628 2.516 1.917l.144.234.217.377.272.515.273.564.11.24.22.501.222.534.112.279.224.581.227.613.23.646.231.677.235.71.358 1.126.15.486H20c.552 0 1 .448 1 1v4c0 .552-.448 1-1 1v4c0 .552-.448 1-1 1H5c-.552 0-1-.448-1-1v-4c-.552 0-1-.448-1-1v-4c0-.552.448-1 1-1h2.259l.27-.87.238-.742.235-.71.232-.677.115-.327.228-.63.225-.597.224-.565.222-.534.11-.255.22-.486.273-.564.272-.515.217-.377C10.207 1.704 11.068 1 12 1zm6 16h-5v2h-2v-2H6v3h12v-3zm1-4H5v2h14v-2zM12 3c-.1 0-.227.087-.378.26l-.077.093-.128.173-.067.1-.141.224-.074.124-.153.275-.161.309-.169.341-.176.375-.182.408-.188.44-.195.473-.2.506-.205.538-.21.57-.322.913-.22.649-.224.68-.176.549h7.291l-.178-.557-.229-.696-.225-.663-.33-.933-.215-.58-.312-.807-.2-.495-.29-.68-.186-.41-.09-.191-.174-.358-.167-.323-.158-.288-.15-.253-.142-.217c-.199-.29-.369-.467-.503-.526l-.056-.019L12 3z" transform="translate(-19 -255) translate(0 239) translate(19 16)"></path></g></g></g></g></svg>
+                        <div>상의</div>
+                    </li>
+                    
+                    <li class="category list--itm">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><g><g><g><path d="M0 0H24V24H0z" transform="translate(-19 -255) translate(0 239) translate(19 16)"></path><path fill="#5D5D5D" d="M12 1c.88 0 1.697.628 2.516 1.917l.144.234.217.377.272.515.273.564.11.24.22.501.222.534.112.279.224.581.227.613.23.646.231.677.235.71.358 1.126.15.486H20c.552 0 1 .448 1 1v4c0 .552-.448 1-1 1v4c0 .552-.448 1-1 1H5c-.552 0-1-.448-1-1v-4c-.552 0-1-.448-1-1v-4c0-.552.448-1 1-1h2.259l.27-.87.238-.742.235-.71.232-.677.115-.327.228-.63.225-.597.224-.565.222-.534.11-.255.22-.486.273-.564.272-.515.217-.377C10.207 1.704 11.068 1 12 1zm6 16h-5v2h-2v-2H6v3h12v-3zm1-4H5v2h14v-2zM12 3c-.1 0-.227.087-.378.26l-.077.093-.128.173-.067.1-.141.224-.074.124-.153.275-.161.309-.169.341-.176.375-.182.408-.188.44-.195.473-.2.506-.205.538-.21.57-.322.913-.22.649-.224.68-.176.549h7.291l-.178-.557-.229-.696-.225-.663-.33-.933-.215-.58-.312-.807-.2-.495-.29-.68-.186-.41-.09-.191-.174-.358-.167-.323-.158-.288-.15-.253-.142-.217c-.199-.29-.369-.467-.503-.526l-.056-.019L12 3z" transform="translate(-19 -255) translate(0 239) translate(19 16)"></path></g></g></g></g></svg>
+                        <div>하의</div>
+                    </li>
+                    
+                    <li class="category list--itm">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><g><g><g><path d="M0 0H24V24H0z" transform="translate(-19 -255) translate(0 239) translate(19 16)"></path><path fill="#5D5D5D" d="M12 1c.88 0 1.697.628 2.516 1.917l.144.234.217.377.272.515.273.564.11.24.22.501.222.534.112.279.224.581.227.613.23.646.231.677.235.71.358 1.126.15.486H20c.552 0 1 .448 1 1v4c0 .552-.448 1-1 1v4c0 .552-.448 1-1 1H5c-.552 0-1-.448-1-1v-4c-.552 0-1-.448-1-1v-4c0-.552.448-1 1-1h2.259l.27-.87.238-.742.235-.71.232-.677.115-.327.228-.63.225-.597.224-.565.222-.534.11-.255.22-.486.273-.564.272-.515.217-.377C10.207 1.704 11.068 1 12 1zm6 16h-5v2h-2v-2H6v3h12v-3zm1-4H5v2h14v-2zM12 3c-.1 0-.227.087-.378.26l-.077.093-.128.173-.067.1-.141.224-.074.124-.153.275-.161.309-.169.341-.176.375-.182.408-.188.44-.195.473-.2.506-.205.538-.21.57-.322.913-.22.649-.224.68-.176.549h7.291l-.178-.557-.229-.696-.225-.663-.33-.933-.215-.58-.312-.807-.2-.495-.29-.68-.186-.41-.09-.191-.174-.358-.167-.323-.158-.288-.15-.253-.142-.217c-.199-.29-.369-.467-.503-.526l-.056-.019L12 3z" transform="translate(-19 -255) translate(0 239) translate(19 16)"></path></g></g></g></g></svg>
+                        <div>신발</div>
+                    </li>
+                    
+                    
+                </ul>
+            </div>
+
+
+            <div class="filter__wrapper" style="transform: translateZ(0px);">
+                <div class="filter">
+                    <div class="filter_top">
+                        <div class="swiper-wrapper">
+                            <div class="filter_itm">
+                                카테고리
+                            </div>
+                            <div class="filter_itm">
+                                브랜드
+                            </div>
+                            <div class="filter_itm">
+                                TPO
+                            </div>
+                        </div>
+                        <div class="sort_product">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><g><g><g><path d="M0 0H24V24H0z" transform="translate(-296 -202) translate(0 186) translate(296 16)"></path><path fill="#363636" d="M16 4v12h2l-3 4-3-4h2V4h2zM9 4l3 4h-2v12H8V8H6l3-4z" transform="translate(-296 -202) translate(0 186) translate(296 16)"></path></g></g></g></g></svg>
+                            <span>최신순</span>
+                        </div>
+                    </div>
                 </div>
-            </a>
-        </li>
+            </div>
 
-        <li class="board-itm">
-            <a href="">
-                <div class="itm_img"></div>
-                <div class="itm_info">
-                    <h1 class="itm_info-title">TITLE</h1>
-                    <p class="itm_info-text">
-                        LULULALA
-                    </p>
-                </div>
-            </a>
-        </li>
+        </div>
 
-        <li class="board-itm">
-            <a href="">
-                <div class="itm_img"></div>
-                <div class="itm_info">
-                    <h1 class="itm_info-title">TITLE</h1>
-                    <p class="itm_info-text">
-                        LULULALA
-                    </p>
-                </div>
-            </a>
-        </li>
+        <div class="itemList__wrapper">
+            <ul class="itemList">
 
-        <li class="board-itm">
-            <a href="">
-                <div class="itm_img"></div>
-                <div class="itm_info">
-                    <h1 class="itm_info-title">TITLE</h1>
-                    <p class="itm_info-text">
-                        LULULALA
-                    </p>
-                </div>
-            </a>
-        </li>
+                <li class="itemList-itm">
+                    <div class="heart-icon">
+                        <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g id="000-Icon/24/icn_heart_24" stroke="none" stroke-width="1" fill="none"
+                                fill-rule="evenodd">
+                                <path
+                                    d="M6.58091415,4.19230246 C4.4928644,4.83477931 3,7.00621844 3,9.39808147 C3,12.4123568 5.70401973,15.8608877 11.0245556,19.9143016 L12.0023496,20.6498437 L12.9707654,19.9178353 C18.2930679,15.8627569 21,12.4146409 21,9.39808147 C21,7.03993234 19.5487069,4.89327042 17.5011325,4.21844328 L17.2912502,4.15482521 C15.4711397,3.65110379 13.6269555,4.38441654 12.1730387,6.239335 L11.999,6.46908147 L11.9908405,6.45655409 C10.4813507,4.39868914 8.52066838,3.595455 6.58091415,4.19230246 Z M16.8751075,6.11794128 C18.0773363,6.51416454 19,7.87891099 19,9.39808147 L18.995749,9.56002353 C18.8881135,11.6287919 16.7358298,14.414924 12.4637332,17.7808943 L11.999,18.1410815 L11.9055002,18.0691129 C7.27474377,14.4856045 5,11.5424373 5,9.39808147 C5,7.85812632 5.94768438,6.47967631 7.16908585,6.10386048 C8.49262963,5.69661624 9.93654218,6.50723381 11.1055728,8.84529506 L11.9874755,10.6091005 L13.0071832,8.62616927 C14.1681248,6.43151123 15.582799,5.69203007 16.8751075,6.11794128 Z"
+                                    id="icn/24/icn_heart_24" fill="#e5e5e5"></path>
+                                <rect id="area" x="0" y="0" width="24" height="24"></rect>
+                            </g>
+                        </svg>
+                    </div>
 
-        <li class="board-itm">
-            <a href="">
-                <div class="itm_img"></div>
-                <div class="itm_info">
-                    <h1 class="itm_info-title">TITLE</h1>
-                    <p class="itm_info-text">
-                        LULULALA
-                    </p>
-                </div>
-            </a>
-        </li>
+                    <div class="image_wrapper">
+                        <img src=""
+                            alt="">
+                    </div>
+                    <div class="item_info">
+                        <div class="item_info_brand">무지티셔츠</div>
+                        <div class="item_info_name">나이키</div>
+                       
+                        <div class="item_info_stickers">
+                            <div class="item_info_stickers_free_shipping">black</div>
+                            <div class="item_info_stickers_tag"><span>반팔</span></div>
+                            <div class="item_info_stickers_tag"><span>캐주얼</span></div>
+                        </div>
+                    </div>
+                </li>
 
-        <li class="board-itm">
-            <a href="">
-                <div class="itm_img"></div>
-                <div class="itm_info">
-                    <h1 class="itm_info-title">TITLE</h1>
-                    <p class="itm_info-text">
-                        LULULALA
-                    </p>
-                </div>
-            </a>
-        </li>
+                <li class="itemList-itm">
+                    <div class="heart-icon">
+                        <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g id="000-Icon/24/icn_heart_24" stroke="none" stroke-width="1" fill="none"
+                                fill-rule="evenodd">
+                                <path
+                                    d="M6.58091415,4.19230246 C4.4928644,4.83477931 3,7.00621844 3,9.39808147 C3,12.4123568 5.70401973,15.8608877 11.0245556,19.9143016 L12.0023496,20.6498437 L12.9707654,19.9178353 C18.2930679,15.8627569 21,12.4146409 21,9.39808147 C21,7.03993234 19.5487069,4.89327042 17.5011325,4.21844328 L17.2912502,4.15482521 C15.4711397,3.65110379 13.6269555,4.38441654 12.1730387,6.239335 L11.999,6.46908147 L11.9908405,6.45655409 C10.4813507,4.39868914 8.52066838,3.595455 6.58091415,4.19230246 Z M16.8751075,6.11794128 C18.0773363,6.51416454 19,7.87891099 19,9.39808147 L18.995749,9.56002353 C18.8881135,11.6287919 16.7358298,14.414924 12.4637332,17.7808943 L11.999,18.1410815 L11.9055002,18.0691129 C7.27474377,14.4856045 5,11.5424373 5,9.39808147 C5,7.85812632 5.94768438,6.47967631 7.16908585,6.10386048 C8.49262963,5.69661624 9.93654218,6.50723381 11.1055728,8.84529506 L11.9874755,10.6091005 L13.0071832,8.62616927 C14.1681248,6.43151123 15.582799,5.69203007 16.8751075,6.11794128 Z"
+                                    id="icn/24/icn_heart_24" fill="#e5e5e5"></path>
+                                <rect id="area" x="0" y="0" width="24" height="24"></rect>
+                            </g>
+                        </svg>
+                    </div>
 
-        <li class="board-itm">
-            <a href="">
-                <div class="itm_img"></div>
-                <div class="itm_info">
-                    <h1 class="itm_info-title">TITLE</h1>
-                    <p class="itm_info-text">
-                        LULULALA
-                    </p>
-                </div>
-            </a>
-        </li>
+                    <div class="image_wrapper">
+                        <img src=""
+                            alt="">
+                    </div>
+                    <div class="item_info">
+                        <div class="item_info_brand">무지티셔츠</div>
+                        <div class="item_info_name">나이키</div>
+                       
+                        <div class="item_info_stickers">
+                            <div class="item_info_stickers_free_shipping">black</div>
+                            <div class="item_info_stickers_tag"><span>반팔</span></div>
+                            <div class="item_info_stickers_tag"><span>캐주얼</span></div>
+                        </div>
+                    </div>
+                </li>   
 
-        <li class="board-itm">
-            <a href="">
-                <div class="itm_img"></div>
-                <div class="itm_info">
-                    <h1 class="itm_info-title">TITLE</h1>
-                    <p class="itm_info-text">
-                        LULULALA
-                    </p>
-                </div>
-            </a>
-        </li>
+                <li class="itemList-itm">
+                    <div class="heart-icon">
+                        <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g id="000-Icon/24/icn_heart_24" stroke="none" stroke-width="1" fill="none"
+                                fill-rule="evenodd">
+                                <path
+                                    d="M6.58091415,4.19230246 C4.4928644,4.83477931 3,7.00621844 3,9.39808147 C3,12.4123568 5.70401973,15.8608877 11.0245556,19.9143016 L12.0023496,20.6498437 L12.9707654,19.9178353 C18.2930679,15.8627569 21,12.4146409 21,9.39808147 C21,7.03993234 19.5487069,4.89327042 17.5011325,4.21844328 L17.2912502,4.15482521 C15.4711397,3.65110379 13.6269555,4.38441654 12.1730387,6.239335 L11.999,6.46908147 L11.9908405,6.45655409 C10.4813507,4.39868914 8.52066838,3.595455 6.58091415,4.19230246 Z M16.8751075,6.11794128 C18.0773363,6.51416454 19,7.87891099 19,9.39808147 L18.995749,9.56002353 C18.8881135,11.6287919 16.7358298,14.414924 12.4637332,17.7808943 L11.999,18.1410815 L11.9055002,18.0691129 C7.27474377,14.4856045 5,11.5424373 5,9.39808147 C5,7.85812632 5.94768438,6.47967631 7.16908585,6.10386048 C8.49262963,5.69661624 9.93654218,6.50723381 11.1055728,8.84529506 L11.9874755,10.6091005 L13.0071832,8.62616927 C14.1681248,6.43151123 15.582799,5.69203007 16.8751075,6.11794128 Z"
+                                    id="icn/24/icn_heart_24" fill="#e5e5e5"></path>
+                                <rect id="area" x="0" y="0" width="24" height="24"></rect>
+                            </g>
+                        </svg>
+                    </div>
 
-        <li class="board-itm">
-            <a href="">
-                <div class="itm_img"></div>
-                <div class="itm_info">
-                    <h1 class="itm_info-title">TITLE</h1>
-                    <p class="itm_info-text">
-                        LULULALA
-                    </p>
-                </div>
-            </a>
-        </li>
+                    <div class="image_wrapper">
+                        <img src=""
+                            alt="">
+                    </div>
+                    <div class="item_info">
+                        <div class="item_info_brand">무지티셔츠</div>
+                        <div class="item_info_name">나이키</div>
+                       
+                        <div class="item_info_stickers">
+                            <div class="item_info_stickers_free_shipping">black</div>
+                            <div class="item_info_stickers_tag"><span>반팔</span></div>
+                            <div class="item_info_stickers_tag"><span>캐주얼</span></div>
+                        </div>
+                    </div>
+                </li>
 
-        <li class="board-itm">
-            <a href="">
-                <div class="itm_img"></div>
-                <div class="itm_info">
-                    <h1 class="itm_info-title">TITLE</h1>
-                    <p class="itm_info-text">
-                        LULULALA
-                    </p>
-                </div>
-            </a>
-        </li>
+                <li class="itemList-itm">
+                    <div class="heart-icon">
+                        <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g id="000-Icon/24/icn_heart_24" stroke="none" stroke-width="1" fill="none"
+                                fill-rule="evenodd">
+                                <path
+                                    d="M6.58091415,4.19230246 C4.4928644,4.83477931 3,7.00621844 3,9.39808147 C3,12.4123568 5.70401973,15.8608877 11.0245556,19.9143016 L12.0023496,20.6498437 L12.9707654,19.9178353 C18.2930679,15.8627569 21,12.4146409 21,9.39808147 C21,7.03993234 19.5487069,4.89327042 17.5011325,4.21844328 L17.2912502,4.15482521 C15.4711397,3.65110379 13.6269555,4.38441654 12.1730387,6.239335 L11.999,6.46908147 L11.9908405,6.45655409 C10.4813507,4.39868914 8.52066838,3.595455 6.58091415,4.19230246 Z M16.8751075,6.11794128 C18.0773363,6.51416454 19,7.87891099 19,9.39808147 L18.995749,9.56002353 C18.8881135,11.6287919 16.7358298,14.414924 12.4637332,17.7808943 L11.999,18.1410815 L11.9055002,18.0691129 C7.27474377,14.4856045 5,11.5424373 5,9.39808147 C5,7.85812632 5.94768438,6.47967631 7.16908585,6.10386048 C8.49262963,5.69661624 9.93654218,6.50723381 11.1055728,8.84529506 L11.9874755,10.6091005 L13.0071832,8.62616927 C14.1681248,6.43151123 15.582799,5.69203007 16.8751075,6.11794128 Z"
+                                    id="icn/24/icn_heart_24" fill="#e5e5e5"></path>
+                                <rect id="area" x="0" y="0" width="24" height="24"></rect>
+                            </g>
+                        </svg>
+                    </div>
 
-        <li class="board-itm">
-            <a href="">
-                <div class="itm_img"></div>
-                <div class="itm_info">
-                    <h1 class="itm_info-title">TITLE</h1>
-                    <p class="itm_info-text">
-                        LULULALA
-                    </p>
-                </div>
-            </a>
-        </li>
+                    <div class="image_wrapper">
+                        <img src=""
+                            alt="">
+                    </div>
+                    <div class="item_info">
+                        <div class="item_info_brand">무지티셔츠</div>
+                        <div class="item_info_name">나이키</div>
+                       
+                        <div class="item_info_stickers">
+                            <div class="item_info_stickers_free_shipping">black</div>
+                            <div class="item_info_stickers_tag"><span>반팔</span></div>
+                            <div class="item_info_stickers_tag"><span>캐주얼</span></div>
+                        </div>
+                    </div>
+                </li>
 
-    </ul>
+                <li class="itemList-itm">
+                    <div class="heart-icon">
+                        <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g id="000-Icon/24/icn_heart_24" stroke="none" stroke-width="1" fill="none"
+                                fill-rule="evenodd">
+                                <path
+                                    d="M6.58091415,4.19230246 C4.4928644,4.83477931 3,7.00621844 3,9.39808147 C3,12.4123568 5.70401973,15.8608877 11.0245556,19.9143016 L12.0023496,20.6498437 L12.9707654,19.9178353 C18.2930679,15.8627569 21,12.4146409 21,9.39808147 C21,7.03993234 19.5487069,4.89327042 17.5011325,4.21844328 L17.2912502,4.15482521 C15.4711397,3.65110379 13.6269555,4.38441654 12.1730387,6.239335 L11.999,6.46908147 L11.9908405,6.45655409 C10.4813507,4.39868914 8.52066838,3.595455 6.58091415,4.19230246 Z M16.8751075,6.11794128 C18.0773363,6.51416454 19,7.87891099 19,9.39808147 L18.995749,9.56002353 C18.8881135,11.6287919 16.7358298,14.414924 12.4637332,17.7808943 L11.999,18.1410815 L11.9055002,18.0691129 C7.27474377,14.4856045 5,11.5424373 5,9.39808147 C5,7.85812632 5.94768438,6.47967631 7.16908585,6.10386048 C8.49262963,5.69661624 9.93654218,6.50723381 11.1055728,8.84529506 L11.9874755,10.6091005 L13.0071832,8.62616927 C14.1681248,6.43151123 15.582799,5.69203007 16.8751075,6.11794128 Z"
+                                    id="icn/24/icn_heart_24" fill="#e5e5e5"></path>
+                                <rect id="area" x="0" y="0" width="24" height="24"></rect>
+                            </g>
+                        </svg>
+                    </div>
 
-    <style>
-        *{
-            box-sizing: border-box;
-        }
+                    <div class="image_wrapper">
+                        <img src=""
+                            alt="">
+                    </div>
+                    <div class="item_info">
+                        <div class="item_info_brand">무지티셔츠</div>
+                        <div class="item_info_name">나이키</div>
+                       
+                        <div class="item_info_stickers">
+                            <div class="item_info_stickers_free_shipping">black</div>
+                            <div class="item_info_stickers_tag"><span>반팔</span></div>
+                            <div class="item_info_stickers_tag"><span>캐주얼</span></div>
+                        </div>
+                    </div>
+                </li>
 
-        body, ul, li, h1, a, p, hr{
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            text-decoration: none;
-            border: none;
-        }
+                <li class="itemList-itm">
+                    <div class="heart-icon">
+                        <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g id="000-Icon/24/icn_heart_24" stroke="none" stroke-width="1" fill="none"
+                                fill-rule="evenodd">
+                                <path
+                                    d="M6.58091415,4.19230246 C4.4928644,4.83477931 3,7.00621844 3,9.39808147 C3,12.4123568 5.70401973,15.8608877 11.0245556,19.9143016 L12.0023496,20.6498437 L12.9707654,19.9178353 C18.2930679,15.8627569 21,12.4146409 21,9.39808147 C21,7.03993234 19.5487069,4.89327042 17.5011325,4.21844328 L17.2912502,4.15482521 C15.4711397,3.65110379 13.6269555,4.38441654 12.1730387,6.239335 L11.999,6.46908147 L11.9908405,6.45655409 C10.4813507,4.39868914 8.52066838,3.595455 6.58091415,4.19230246 Z M16.8751075,6.11794128 C18.0773363,6.51416454 19,7.87891099 19,9.39808147 L18.995749,9.56002353 C18.8881135,11.6287919 16.7358298,14.414924 12.4637332,17.7808943 L11.999,18.1410815 L11.9055002,18.0691129 C7.27474377,14.4856045 5,11.5424373 5,9.39808147 C5,7.85812632 5.94768438,6.47967631 7.16908585,6.10386048 C8.49262963,5.69661624 9.93654218,6.50723381 11.1055728,8.84529506 L11.9874755,10.6091005 L13.0071832,8.62616927 C14.1681248,6.43151123 15.582799,5.69203007 16.8751075,6.11794128 Z"
+                                    id="icn/24/icn_heart_24" fill="#e5e5e5"></path>
+                                <rect id="area" x="0" y="0" width="24" height="24"></rect>
+                            </g>
+                        </svg>
+                    </div>
 
-        .board_list{
-            margin: auto;
-            width: 70%;
-            display: flex;
-            justify-content: space-evenly;
-            flex-wrap: wrap;
-        }
+                    <div class="image_wrapper">
+                        <img src=""
+                            alt="">
+                    </div>
+                    <div class="item_info">
+                        <div class="item_info_brand">무지티셔츠</div>
+                        <div class="item_info_name">나이키</div>
+                       
+                        <div class="item_info_stickers">
+                            <div class="item_info_stickers_free_shipping">black</div>
+                            <div class="item_info_stickers_tag"><span>반팔</span></div>
+                            <div class="item_info_stickers_tag"><span>캐주얼</span></div>
+                        </div>
+                    </div>
+                </li>
 
-        .board-itm{
-            width: 30%;
-            /* padding-bottom: 30%; */
-            background-color: rgb(255, 255, 255);
-            box-shadow: 2px 2px 10px rgb(58, 58, 58, 30%);
-            border: 1px solid #fff;
-            margin-top: 3%;
-            display: flex;
-            flex-flow: column;
-        }
+                
+                <!--li class="itemList-itm">
+                    <div class="heart-icon">
+                        <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g id="000-Icon/24/icn_heart_24" stroke="none" stroke-width="1" fill="none"
+                                fill-rule="evenodd">
+                                <path
+                                    d="M6.58091415,4.19230246 C4.4928644,4.83477931 3,7.00621844 3,9.39808147 C3,12.4123568 5.70401973,15.8608877 11.0245556,19.9143016 L12.0023496,20.6498437 L12.9707654,19.9178353 C18.2930679,15.8627569 21,12.4146409 21,9.39808147 C21,7.03993234 19.5487069,4.89327042 17.5011325,4.21844328 L17.2912502,4.15482521 C15.4711397,3.65110379 13.6269555,4.38441654 12.1730387,6.239335 L11.999,6.46908147 L11.9908405,6.45655409 C10.4813507,4.39868914 8.52066838,3.595455 6.58091415,4.19230246 Z M16.8751075,6.11794128 C18.0773363,6.51416454 19,7.87891099 19,9.39808147 L18.995749,9.56002353 C18.8881135,11.6287919 16.7358298,14.414924 12.4637332,17.7808943 L11.999,18.1410815 L11.9055002,18.0691129 C7.27474377,14.4856045 5,11.5424373 5,9.39808147 C5,7.85812632 5.94768438,6.47967631 7.16908585,6.10386048 C8.49262963,5.69661624 9.93654218,6.50723381 11.1055728,8.84529506 L11.9874755,10.6091005 L13.0071832,8.62616927 C14.1681248,6.43151123 15.582799,5.69203007 16.8751075,6.11794128 Z"
+                                    id="icn/24/icn_heart_24" fill="#e5e5e5"></path>
+                                <rect id="area" x="0" y="0" width="24" height="24"></rect>
+                            </g>
+                        </svg>
+                    </div>
 
-        .itm_img{
-            background-image: url("{% static 'img/none.jpg' %}");
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
-            filter: grayscale(100%);
-            width: 100%;
-            padding-bottom: 100%;
+                    <div class="image_wrapper">
+                        <img src="https://koodon-product-image.s3.ap-northeast-2.amazonaws.com/media/reebonze/10572593_thumb_.jpg"
+                            alt="고야드 옐로우 세나 GM 클러치">
+                    </div>
 
-        }
+                    <div class="item_info">
+                        <div class="item_info_brand">고야드</div>
+                        <div class="item_info_name">고야드 옐로우 세나 GM 클러치</div>
+                        <div class="item_info_price">
+                            <span class="discounted_amount">75만</span>
+                            <span class="item_info_price_won">72만 원</span>
+                        </div>
+                        <div class="item_info_stickers">
+                            <div class="item_info_stickers_free_shipping">무료 배송</div>
+                            <div class="item_info_stickers_tag"><span>GM</span></div>
+                        </div>
+                    </div>
+                </li>
 
-        .itm_info{
-            padding: 5%;
-            color: #000;
-        }
-    </style>
+                <li class="itemList-itm">
+                    <div class="heart-icon">
+                        <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g id="000-Icon/24/icn_heart_24" stroke="none" stroke-width="1" fill="none"
+                                fill-rule="evenodd">
+                                <path
+                                    d="M6.58091415,4.19230246 C4.4928644,4.83477931 3,7.00621844 3,9.39808147 C3,12.4123568 5.70401973,15.8608877 11.0245556,19.9143016 L12.0023496,20.6498437 L12.9707654,19.9178353 C18.2930679,15.8627569 21,12.4146409 21,9.39808147 C21,7.03993234 19.5487069,4.89327042 17.5011325,4.21844328 L17.2912502,4.15482521 C15.4711397,3.65110379 13.6269555,4.38441654 12.1730387,6.239335 L11.999,6.46908147 L11.9908405,6.45655409 C10.4813507,4.39868914 8.52066838,3.595455 6.58091415,4.19230246 Z M16.8751075,6.11794128 C18.0773363,6.51416454 19,7.87891099 19,9.39808147 L18.995749,9.56002353 C18.8881135,11.6287919 16.7358298,14.414924 12.4637332,17.7808943 L11.999,18.1410815 L11.9055002,18.0691129 C7.27474377,14.4856045 5,11.5424373 5,9.39808147 C5,7.85812632 5.94768438,6.47967631 7.16908585,6.10386048 C8.49262963,5.69661624 9.93654218,6.50723381 11.1055728,8.84529506 L11.9874755,10.6091005 L13.0071832,8.62616927 C14.1681248,6.43151123 15.582799,5.69203007 16.8751075,6.11794128 Z"
+                                    id="icn/24/icn_heart_24" fill="#e5e5e5"></path>
+                                <rect id="area" x="0" y="0" width="24" height="24"></rect>
+                            </g>
+                        </svg>
+                    </div>
 
+                    <div class="image_wrapper">
+                        <img src="https://koodon-product-image.s3.ap-northeast-2.amazonaws.com/media/reebonze/10572593_thumb_.jpg"
+                            alt="고야드 옐로우 세나 GM 클러치">
+                    </div>
+
+                    <div class="item_info">
+                        <div class="item_info_brand">고야드</div>
+                        <div class="item_info_name">고야드 옐로우 세나 GM 클러치</div>
+                        <div class="item_info_price">
+                            <span class="discounted_amount">75만</span>
+                            <span class="item_info_price_won">72만 원</span>
+                        </div>
+                        <div class="item_info_stickers">
+                            <div class="item_info_stickers_free_shipping">무료 배송</div>
+                            <div class="item_info_stickers_tag"><span>GM</span></div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="itemList-itm">
+                    <div class="heart-icon">
+                        <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g id="000-Icon/24/icn_heart_24" stroke="none" stroke-width="1" fill="none"
+                                fill-rule="evenodd">
+                                <path
+                                    d="M6.58091415,4.19230246 C4.4928644,4.83477931 3,7.00621844 3,9.39808147 C3,12.4123568 5.70401973,15.8608877 11.0245556,19.9143016 L12.0023496,20.6498437 L12.9707654,19.9178353 C18.2930679,15.8627569 21,12.4146409 21,9.39808147 C21,7.03993234 19.5487069,4.89327042 17.5011325,4.21844328 L17.2912502,4.15482521 C15.4711397,3.65110379 13.6269555,4.38441654 12.1730387,6.239335 L11.999,6.46908147 L11.9908405,6.45655409 C10.4813507,4.39868914 8.52066838,3.595455 6.58091415,4.19230246 Z M16.8751075,6.11794128 C18.0773363,6.51416454 19,7.87891099 19,9.39808147 L18.995749,9.56002353 C18.8881135,11.6287919 16.7358298,14.414924 12.4637332,17.7808943 L11.999,18.1410815 L11.9055002,18.0691129 C7.27474377,14.4856045 5,11.5424373 5,9.39808147 C5,7.85812632 5.94768438,6.47967631 7.16908585,6.10386048 C8.49262963,5.69661624 9.93654218,6.50723381 11.1055728,8.84529506 L11.9874755,10.6091005 L13.0071832,8.62616927 C14.1681248,6.43151123 15.582799,5.69203007 16.8751075,6.11794128 Z"
+                                    id="icn/24/icn_heart_24" fill="#e5e5e5"></path>
+                                <rect id="area" x="0" y="0" width="24" height="24"></rect>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <div class="image_wrapper">
+                        <img src="https://koodon-product-image.s3.ap-northeast-2.amazonaws.com/media/reebonze/10572593_thumb_.jpg"
+                            alt="고야드 옐로우 세나 GM 클러치">
+                    </div>
+
+                    <div class="item_info">
+                        <div class="item_info_brand">고야드</div>
+                        <div class="item_info_name">고야드 옐로우 세나 GM 클러치</div>
+                        <div class="item_info_price">
+                            <span class="discounted_amount">75만</span>
+                            <span class="item_info_price_won">72만 원</span>
+                        </div>
+                        <div class="item_info_stickers">
+                            <div class="item_info_stickers_free_shipping">무료 배송</div>
+                            <div class="item_info_stickers_tag"><span>GM</span></div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="itemList-itm">
+                    <div class="heart-icon">
+                        <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g id="000-Icon/24/icn_heart_24" stroke="none" stroke-width="1" fill="none"
+                                fill-rule="evenodd">
+                                <path
+                                    d="M6.58091415,4.19230246 C4.4928644,4.83477931 3,7.00621844 3,9.39808147 C3,12.4123568 5.70401973,15.8608877 11.0245556,19.9143016 L12.0023496,20.6498437 L12.9707654,19.9178353 C18.2930679,15.8627569 21,12.4146409 21,9.39808147 C21,7.03993234 19.5487069,4.89327042 17.5011325,4.21844328 L17.2912502,4.15482521 C15.4711397,3.65110379 13.6269555,4.38441654 12.1730387,6.239335 L11.999,6.46908147 L11.9908405,6.45655409 C10.4813507,4.39868914 8.52066838,3.595455 6.58091415,4.19230246 Z M16.8751075,6.11794128 C18.0773363,6.51416454 19,7.87891099 19,9.39808147 L18.995749,9.56002353 C18.8881135,11.6287919 16.7358298,14.414924 12.4637332,17.7808943 L11.999,18.1410815 L11.9055002,18.0691129 C7.27474377,14.4856045 5,11.5424373 5,9.39808147 C5,7.85812632 5.94768438,6.47967631 7.16908585,6.10386048 C8.49262963,5.69661624 9.93654218,6.50723381 11.1055728,8.84529506 L11.9874755,10.6091005 L13.0071832,8.62616927 C14.1681248,6.43151123 15.582799,5.69203007 16.8751075,6.11794128 Z"
+                                    id="icn/24/icn_heart_24" fill="#e5e5e5"></path>
+                                <rect id="area" x="0" y="0" width="24" height="24"></rect>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <div class="image_wrapper">
+                        <img src="https://koodon-product-image.s3.ap-northeast-2.amazonaws.com/media/reebonze/10572593_thumb_.jpg"
+                            alt="고야드 옐로우 세나 GM 클러치">
+                    </div>
+
+                    <div class="item_info">
+                        <div class="item_info_brand">고야드</div>
+                        <div class="item_info_name">고야드 옐로우 세나 GM 클러치</div>
+                        <div class="item_info_price">
+                            <span class="discounted_amount">75만</span>
+                            <span class="item_info_price_won">72만 원</span>
+                        </div>
+                        <div class="item_info_stickers">
+                            <div class="item_info_stickers_free_shipping">무료 배송</div>
+                            <div class="item_info_stickers_tag"><span>GM</span></div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="itemList-itm">
+                    <div class="heart-icon">
+                        <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g id="000-Icon/24/icn_heart_24" stroke="none" stroke-width="1" fill="none"
+                                fill-rule="evenodd">
+                                <path
+                                    d="M6.58091415,4.19230246 C4.4928644,4.83477931 3,7.00621844 3,9.39808147 C3,12.4123568 5.70401973,15.8608877 11.0245556,19.9143016 L12.0023496,20.6498437 L12.9707654,19.9178353 C18.2930679,15.8627569 21,12.4146409 21,9.39808147 C21,7.03993234 19.5487069,4.89327042 17.5011325,4.21844328 L17.2912502,4.15482521 C15.4711397,3.65110379 13.6269555,4.38441654 12.1730387,6.239335 L11.999,6.46908147 L11.9908405,6.45655409 C10.4813507,4.39868914 8.52066838,3.595455 6.58091415,4.19230246 Z M16.8751075,6.11794128 C18.0773363,6.51416454 19,7.87891099 19,9.39808147 L18.995749,9.56002353 C18.8881135,11.6287919 16.7358298,14.414924 12.4637332,17.7808943 L11.999,18.1410815 L11.9055002,18.0691129 C7.27474377,14.4856045 5,11.5424373 5,9.39808147 C5,7.85812632 5.94768438,6.47967631 7.16908585,6.10386048 C8.49262963,5.69661624 9.93654218,6.50723381 11.1055728,8.84529506 L11.9874755,10.6091005 L13.0071832,8.62616927 C14.1681248,6.43151123 15.582799,5.69203007 16.8751075,6.11794128 Z"
+                                    id="icn/24/icn_heart_24" fill="#e5e5e5"></path>
+                                <rect id="area" x="0" y="0" width="24" height="24"></rect>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <div class="image_wrapper">
+                        <img src="https://koodon-product-image.s3.ap-northeast-2.amazonaws.com/media/reebonze/10572593_thumb_.jpg"
+                            alt="고야드 옐로우 세나 GM 클러치">
+                    </div>
+
+                    <div class="item_info">
+                        <div class="item_info_brand">고야드</div>
+                        <div class="item_info_name">고야드 옐로우 세나 GM 클러치</div>
+                        <div class="item_info_price">
+                            <span class="discounted_amount">75만</span>
+                            <span class="item_info_price_won">72만 원</span>
+                        </div>
+                        <div class="item_info_stickers">
+                            <div class="item_info_stickers_free_shipping">무료 배송</div>
+                            <div class="item_info_stickers_tag"><span>GM</span></div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="itemList-itm">
+                    <div class="heart-icon">
+                        <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g id="000-Icon/24/icn_heart_24" stroke="none" stroke-width="1" fill="none"
+                                fill-rule="evenodd">
+                                <path
+                                    d="M6.58091415,4.19230246 C4.4928644,4.83477931 3,7.00621844 3,9.39808147 C3,12.4123568 5.70401973,15.8608877 11.0245556,19.9143016 L12.0023496,20.6498437 L12.9707654,19.9178353 C18.2930679,15.8627569 21,12.4146409 21,9.39808147 C21,7.03993234 19.5487069,4.89327042 17.5011325,4.21844328 L17.2912502,4.15482521 C15.4711397,3.65110379 13.6269555,4.38441654 12.1730387,6.239335 L11.999,6.46908147 L11.9908405,6.45655409 C10.4813507,4.39868914 8.52066838,3.595455 6.58091415,4.19230246 Z M16.8751075,6.11794128 C18.0773363,6.51416454 19,7.87891099 19,9.39808147 L18.995749,9.56002353 C18.8881135,11.6287919 16.7358298,14.414924 12.4637332,17.7808943 L11.999,18.1410815 L11.9055002,18.0691129 C7.27474377,14.4856045 5,11.5424373 5,9.39808147 C5,7.85812632 5.94768438,6.47967631 7.16908585,6.10386048 C8.49262963,5.69661624 9.93654218,6.50723381 11.1055728,8.84529506 L11.9874755,10.6091005 L13.0071832,8.62616927 C14.1681248,6.43151123 15.582799,5.69203007 16.8751075,6.11794128 Z"
+                                    id="icn/24/icn_heart_24" fill="#e5e5e5"></path>
+                                <rect id="area" x="0" y="0" width="24" height="24"></rect>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <div class="image_wrapper">
+                        <img src="https://koodon-product-image.s3.ap-northeast-2.amazonaws.com/media/reebonze/10572593_thumb_.jpg"
+                            alt="고야드 옐로우 세나 GM 클러치">
+                    </div>
+
+                    <div class="item_info">
+                        <div class="item_info_brand">고야드</div>
+                        <div class="item_info_name">고야드 옐로우 세나 GM 클러치</div>
+                        <div class="item_info_price">
+                            <span class="discounted_amount">75만</span>
+                            <span class="item_info_price_won">72만 원</span>
+                        </div>
+                        <div class="item_info_stickers">
+                            <div class="item_info_stickers_free_shipping">무료 배송</div>
+                            <div class="item_info_stickers_tag"><span>GM</span></div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="itemList-itm">
+                    <div class="heart-icon">
+                        <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g id="000-Icon/24/icn_heart_24" stroke="none" stroke-width="1" fill="none"
+                                fill-rule="evenodd">
+                                <path
+                                    d="M6.58091415,4.19230246 C4.4928644,4.83477931 3,7.00621844 3,9.39808147 C3,12.4123568 5.70401973,15.8608877 11.0245556,19.9143016 L12.0023496,20.6498437 L12.9707654,19.9178353 C18.2930679,15.8627569 21,12.4146409 21,9.39808147 C21,7.03993234 19.5487069,4.89327042 17.5011325,4.21844328 L17.2912502,4.15482521 C15.4711397,3.65110379 13.6269555,4.38441654 12.1730387,6.239335 L11.999,6.46908147 L11.9908405,6.45655409 C10.4813507,4.39868914 8.52066838,3.595455 6.58091415,4.19230246 Z M16.8751075,6.11794128 C18.0773363,6.51416454 19,7.87891099 19,9.39808147 L18.995749,9.56002353 C18.8881135,11.6287919 16.7358298,14.414924 12.4637332,17.7808943 L11.999,18.1410815 L11.9055002,18.0691129 C7.27474377,14.4856045 5,11.5424373 5,9.39808147 C5,7.85812632 5.94768438,6.47967631 7.16908585,6.10386048 C8.49262963,5.69661624 9.93654218,6.50723381 11.1055728,8.84529506 L11.9874755,10.6091005 L13.0071832,8.62616927 C14.1681248,6.43151123 15.582799,5.69203007 16.8751075,6.11794128 Z"
+                                    id="icn/24/icn_heart_24" fill="#e5e5e5"></path>
+                                <rect id="area" x="0" y="0" width="24" height="24"></rect>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <div class="image_wrapper">
+                        <img src="https://koodon-product-image.s3.ap-northeast-2.amazonaws.com/media/reebonze/10572593_thumb_.jpg"
+                            alt="고야드 옐로우 세나 GM 클러치">
+                    </div>
+
+                    <div class="item_info">
+                        <div class="item_info_brand">고야드</div>
+                        <div class="item_info_name">고야드 옐로우 세나 GM 클러치</div>
+                        <div class="item_info_price">
+                            <span class="discounted_amount">75만</span>
+                            <span class="item_info_price_won">72만 원</span>
+                        </div>
+                        <div class="item_info_stickers">
+                            <div class="item_info_stickers_free_shipping">무료 배송</div>
+                            <div class="item_info_stickers_tag"><span>GM</span></div>
+                        </div>
+                    </div>
+                </li>
+
+            </ul-->
+        </div>
+
+        <nav class="tabBar__wrapper">
+            <div class="tabBar">
+
+                <div class="tabBar--itm active">
+                    <a href="/">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><g><g><path d="M12 4c2.21 0 4 1.79 4 4h2l2 13H4L6 8h2c0-2.21 1.79-4 4-4zm0 2c-1.105 0-2 .895-2 2h4c0-1.105-.895-2-2-2z" transform="translate(-51 -4) translate(51 4)"></path></g></g></g></svg>
+                        내옷
+                    </a>
+                </div>  
+
+                <div class="tabBar--itm">
+                    <a href="/">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><g><g><path d="M12 4c2.21 0 4 1.79 4 4h2l2 13H4L6 8h2c0-2.21 1.79-4 4-4zm0 2c-1.105 0-2 .895-2 2h4c0-1.105-.895-2-2-2z" transform="translate(-51 -4) translate(51 4)"></path></g></g></g></svg>
+                        내스타일
+                    </a>
+                </div>  
+
+                <div class="tabBar--itm">
+                    <a href="/">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><g><g><path d="M12 4c2.21 0 4 1.79 4 4h2l2 13H4L6 8h2c0-2.21 1.79-4 4-4zm0 2c-1.105 0-2 .895-2 2h4c0-1.105-.895-2-2-2z" transform="translate(-51 -4) translate(51 4)"></path></g></g></g></svg>
+                        AI추천
+                    </a>
+                </div>  
+                    
+            </div>
+        </nav>
+
+    </div>
+
+    <script src="static/board/js"></script>
 </body>
+
 </html>
