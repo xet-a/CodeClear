@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <!--login.html-->
@@ -5,21 +6,21 @@
 <head>
   <title>로그인 페이지</title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="{% static '/css/style.css' %}">
   <style>
     body{
       text-align: center;
     }
   </style>
 </head>
-
+{% load socialaccount %}
 <body>
   <div class="jb-container">
     <div class="jb-item">
       <div style="font-size:44px; margin: 20px;">
         <b>PROJECT</b>
       </div>
-
+      <a href="{% url 'user:kakao_login' %}">카카오 로그인</a>
       <form action="main.html">
         <input class="input" type="text" name="u_id" placeholder="아이디">
         <br>

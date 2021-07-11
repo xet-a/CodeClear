@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
+'''
 from .models import Closet
 
 
@@ -11,3 +11,4 @@ def index(request):
 
 
     return render(request, 'shop/clothes_list.html', context)
+'''

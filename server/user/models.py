@@ -4,6 +4,9 @@ from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
 # AbstractBaseUser : 새로운 User 모델을 상속받아 새로 정의함 / 데이터 스키마에 영향 줌 / 기본-id,pwd,last_login
 # BaseUserManager : User 생성할 때 사용하는 클래스
 #
+from django.utils.translation import ugettext_lazy as _
+from django.core.validators import RegexValidator
+from django.utils import timezone
 from django.core.mail import send_mail
 
 '''
@@ -11,7 +14,6 @@ from django.core.mail import send_mail
 작성 O : (id, pwd, last_login은 ABU에서 제공), 
         email, uname(실명), nickname, isactive, 
 '''
-
 # 기존 User 모델 수정, 추가해서 확장하기
 class User(AbstractBaseUser, PermissionsMixin):    
     email = models.EmailField(       
@@ -19,7 +21,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         max_length=255,        
         unique=True,    
     )
-    uname = models.CharField(
+    username = models.CharField(
         verbose_name=_('Username'),
         max_length=30,
     )
@@ -40,16 +42,40 @@ class User(AbstractBaseUser, PermissionsMixin):
         max_length=17,
         unique=True,
     )
+
+    gender_male = "male"
+    gender_female = "female"
+    gender_other = "other"
+
+    GENDER_CHOICES = (
+        (gender_male, "Male"),
+        (gender_female, "FeMale"),
+        (gender_other, "Other"),
+    )
+
+    gender = models.CharField(
+        choices=GENDER_CHOICES, max_length=10, blank=True
+    )
+
+    LOGIN_EMAIL = "email"
+    LOGIN_KAKAO = "kakao"
+
+    LOGIN_CHOICES = (
+        (LOGIN_EMAIL, "Email"),
+        (LOGIN_KAKAO, "Kakao"),
+    )
+
+    login_method = models.CharField(
+        max_length=50, choices=LOGIN_CHOICES, default=LOGIN_EMAIL
+    )
+    
     birth = models.DateField(
         verbose_name=_('Date of Birth'),
+        blank=True, null=True
     )
-    sex = models.CharField(
-        max_length=1,
-        choices=(
-            ('f', 'female'),
-            ('m', 'male'),
-        )
-    )
+
+    email_verified = models.BooleanField(default=False)
+
     # django user model 필수 필드
     is_active = models.BooleanField(
         verbose_name=_('Is active'),
@@ -75,7 +101,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         upload_to='', # 경로 추가
     )
 
-    objects = UserManager()
+    #objects = UserManager()
 
     # username으로 사용되는 필드. 반드시 unique일 것.
     USERNAME_FIELD = 'email'
@@ -102,8 +128,10 @@ class UserManager(BaseUserManager):
         if not email:
             raise ValueError('The given email must be set')
         # normalize -> 중복 최소화를 위한 정규화
-        email = self.normalize_email(email)
-        user = self.model(email=email, **extra_fields)
+        user = self.model(
+            email=self.normalize_email(email),
+            **extra_fields
+        )
         user.set_password(password)
         user.save(using=self._db)
         return user

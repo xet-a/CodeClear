@@ -1,3 +1,5 @@
+from django.db import models
+'''
 class Closet(models.Model):
 
     COLOR = (
@@ -27,3 +29,4 @@ class Closet(models.Model):
     
     def __str__(self):
         return self.clothes_name
+'''
