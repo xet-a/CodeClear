@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'life',
     'user',
     #'closet',
+    #'shop',
 
     #allauth
     'allauth',
@@ -133,6 +134,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
 
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',

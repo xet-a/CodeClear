@@ -2,7 +2,6 @@
     width: 90%;
     margin: auto;
     padding-bottom: 50px;
-    padding-top: 50PX;
 }
 
 .calendar_header {
@@ -43,7 +42,7 @@
 
 .days {
     display: flex;
-    margin: 50px 40 10px;
+    margin: 25px 0 10px;
 }
 
 .day {
@@ -74,7 +73,7 @@
 
 .date_event{
     display: block;
-    
+    vertical-align: bottom;
 }
 
 .event-itm{

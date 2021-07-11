@@ -1,0 +1,28 @@
+
+<html>
+    <div>
+        {% if clothes_list %}
+            <ul>
+            {% for clothes in clothes_list %}
+                <li><a href="/shop/{{ clothes.id }}/">{{ clothes.clothes_name}}</a></li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>옷이 없습니다.</p>
+        {% endif %}
+    </div>
+
+    <div>
+        <tr class="thead-dark">
+
+            <th>총 {{num}}개</th>
+        </tr>
+    </div>
+   
+
+   
+    <button>
+        <a href="{% url 'shop:closet_create' %}">옷 추가</a>
+    </button>
+
+</html>

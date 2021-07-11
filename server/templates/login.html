@@ -1,26 +1,29 @@
-{% load static %}
+
 <!DOCTYPE html>
 <html>
-<!--login.html-->
+<!--
+  {% load socialaccount %}
+      <a href="{% url 'user:kakao_login' %}">카카오 로그인</a>
+      login.html-->
 
 <head>
   <title>로그인 페이지</title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="{% static '/css/style.css' %}">
+  <link rel="stylesheet" href="static/css/login.css">
   <style>
-    body{
+    body {
       text-align: center;
     }
   </style>
 </head>
-{% load socialaccount %}
+
 <body>
   <div class="jb-container">
     <div class="jb-item">
       <div style="font-size:44px; margin: 20px;">
         <b>PROJECT</b>
       </div>
-      <a href="{% url 'user:kakao_login' %}">카카오 로그인</a>
+
       <form action="main.html">
         <input class="input" type="text" name="u_id" placeholder="아이디">
         <br>
@@ -40,6 +43,17 @@
         <div>
           <p></p>
           <button class="button" type="submit">LOGIN</button>
+        </div>
+        <div class="social-login">
+          <a href="">
+            <img src="static/img/google.png">
+          </a>
+          <a href="">
+            <img src="static/img/kakao.png">
+          </a>
+          <a href="">
+            <img src="static/img/naver.png">
+          </a>
         </div>
     </div>
   </div>
