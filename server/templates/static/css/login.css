@@ -2,14 +2,37 @@ body {
     background-color: #FBFBFB;
     color: #4c4c4c;
     margin: 0 auto;
-    text-align: center;
   }
 
-  
+  .jb-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .jb-item {
+    padding: 20px;
+  }
 
   .input{
-    width: 280px; 
+    border-right:0px;
+    border-top:0px;
+    border-left:0px;
+    width: 300px; 
     height: 25px;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+
+  .input2{
+    border-right:0px; 
+    border-top:0px;
+    border-left:0px;
+    width:220px; 
+    height: 25px;
+    padding: 5px;
+    margin-bottom: 10px;
+
   }
 
   .button {
@@ -20,4 +43,19 @@ body {
     width: 200px;
     border-radius: 20px;
     margin: 20px;
+  }
+
+  img{
+    width: 30px;
+    height: 30px;
+  }
+
+  a:visited { color:#4c4c4c; }
+  a:link{
+    text-decoration: none;
+    color: #4c4c4c;
+  }
+
+  .social-login{
+    height: 40px;
   }
