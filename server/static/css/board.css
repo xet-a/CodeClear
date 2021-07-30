@@ -138,12 +138,12 @@ time, mark, audio, video {
     align-items: center;
 }
 
-.check_box {
+/* .check_box {
     display: inline-flex;
     -webkit-box-align: center;
     align-items: center;
-    padding: 1px 0px 0px;
-}
+    padding: 1px 0px 0px; */
+/* } */
 
 .filter .filter_top .discount_product span:nth-last-child(1) {
     margin-left: 4px;
@@ -165,7 +165,7 @@ time, mark, audio, video {
 }
 
 /* filter bottom */
-.filter .filter_bottom {
+/* .filter .filter_bottom {
     display: flex;
     -webkit-box-pack: justify;
     justify-content: space-between;
@@ -181,7 +181,7 @@ time, mark, audio, video {
     display: inline-block;
     overflow: hidden;
     padding: 0px 16px;
-}
+} */
 
 .filter_itm{
     position: relative;
@@ -197,7 +197,7 @@ time, mark, audio, video {
     cursor: pointer;
 }
 
-.filter .filter_bottom .filter_reset {
+/* .filter .filter_bottom .filter_reset {
     z-index: 1;
     cursor: pointer;
     padding: 7px 7px 7px 8px;
@@ -217,7 +217,7 @@ time, mark, audio, video {
     outline: none;
     border: none;
     height: 24px;
-}
+} */
 
 
 /* ITEM */
